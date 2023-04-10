@@ -1,13 +1,13 @@
-import { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import RadioButtonsGroup from "./component-first/radio-buttons-group";
-import ProgressButton from "./component-second/button";
+import RadioButtonsGroup from "./radio-buttons-group";
 
-
-export default function App() {
+export default function SelectesGroup() {
   return (
     <View style={styles.container}>
-      <ProgressButton></ProgressButton>
+      <RadioButtonsGroup></RadioButtonsGroup>
+      <Text style={{ color: "white" }}>
+        You can cancel your subscription anytime
+      </Text>
     </View>
   );
 }
