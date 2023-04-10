@@ -1,6 +1,5 @@
-import { StatusBar } from "expo-status-bar";
 import { Pressable, StyleSheet, Text, View } from "react-native";
-import React, { useState } from "react";
+import React from "react";
 
 interface Data {
   id: number;

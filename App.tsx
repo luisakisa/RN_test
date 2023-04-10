@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import RadioButtonsGroup from "./component-first/radio-buttons-group";
+import SelectedGroup from "./component-first/component";
 import ProgressButton from "./component-second/button";
 import StyledTextInput from "./component-third/input";
 
@@ -8,7 +8,7 @@ import StyledTextInput from "./component-third/input";
 export default function App() {
   return (
     <View style={styles.container}>
-      {/* <RadioButtonsGroup></RadioButtonsGroup> */}
+      {/* <SelectedGroup></SelectedGroup> */}
       {/* <ProgressButton></ProgressButton> */}
       <StyledTextInput></StyledTextInput>
     </View>
