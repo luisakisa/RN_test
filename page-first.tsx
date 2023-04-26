@@ -1,7 +1,9 @@
 import { Button, StyleSheet, Text, View } from "react-native";
+import { RootStackParamList } from "./types";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-
-export default function PageFirst({navigation}) {
+type prop = NativeStackScreenProps<RootStackParamList, 'Home'>;
+export default function PageFirst({navigation}:prop) {
   return (
     <View style={styles.container}>
        <Button

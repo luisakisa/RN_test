@@ -1,7 +1,15 @@
+import { RouteProp} from '@react-navigation/native';
 import React, { useState } from 'react';
 import { TextInput, View, StyleSheet,Text } from 'react-native';
+import { RootStackParamList } from '../types';
 
-export default function StyledTextInput({route}) {
+
+type prop = {
+  route: RouteProp<RootStackParamList, 'Third'>;
+} 
+
+
+export default function StyledTextInput({route}:prop) {
   const { data} = route.params;
   const [value, setValue] = useState('');
   const [focused, setFocused] = useState(0);

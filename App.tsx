@@ -7,7 +7,8 @@ import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from "@react-navigation/native";
 import PageFirst from "./page-first";
-const Stack = createNativeStackNavigator();
+import { RootStackParamList } from "./types";
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
@@ -16,7 +17,7 @@ export default function App() {
         <Stack.Screen name="Home" component={PageFirst} />
         <Stack.Screen name="First" component={SelectedGroup} />
         <Stack.Screen name="Second" component={ProgressButton} />
-        <Stack.Screen name="Third" component={StyledTextInput} />
+        <Stack.Screen name="Third" component={StyledTextInput}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
