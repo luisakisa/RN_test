@@ -32,6 +32,11 @@ export default function ProgressButton() {
   });
 
   return (
+    <View style={{ flex: 1,
+      alignItems: "center",
+      justifyContent: "center",
+      backgroundColor: "#5A3ECD",
+      }}>
     <TouchableOpacity style={styles.container} onPress={animateProgress}>
       <View
         style={{
@@ -62,7 +67,7 @@ export default function ProgressButton() {
           },
         ]}
       ></Animated.View>
-    </TouchableOpacity>
+    </TouchableOpacity></View>
   );
 }
 

@@ -6,6 +6,11 @@ export default function StyledTextInput() {
   const [focused, setFocused] = useState(0);
 
   return (
+    <View style={{ flex: 1,
+      alignItems: "center",
+      justifyContent: "center",
+      backgroundColor: "#5A3ECD",
+      }}>
     <View style={focused ? styles.containerWithFocus : styles.container} >
       <TextInput
         style={value ? styles.textInputWithValue : styles.textInput}
@@ -16,7 +21,7 @@ export default function StyledTextInput() {
         onFocus={() => setFocused(1)}
         onBlur={() => setFocused(0)}
       />
-    </View>
+    </View></View>
   );
 }
 

@@ -10,8 +10,14 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-navigation/native": "*",
+    "@react-navigation/native-stack": "*",
     "react": "18.2.0",
-    "react-native": "0.71.6"
+    "react-native": "0.71.6",
+    "react-native-gesture-handler": "^2.9.0",
+    "react-native-reanimated": "^3.1.0",
+    "react-native-safe-area-context": "*",
+    "react-native-screens": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
