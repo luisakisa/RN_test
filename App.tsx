@@ -11,6 +11,7 @@ export default function App() {
       <SelectedGroup></SelectedGroup>
       <ProgressButton></ProgressButton>
       <StyledTextInput></StyledTextInput>
+      
     </View>
   );
 }
