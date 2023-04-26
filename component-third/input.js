@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { TextInput, View, StyleSheet } from 'react-native';
+import { TextInput, View, StyleSheet,Text } from 'react-native';
 
-export default function StyledTextInput() {
+export default function StyledTextInput({route}) {
+  const { data} = route.params;
   const [value, setValue] = useState('');
   const [focused, setFocused] = useState(0);
 
@@ -11,6 +12,7 @@ export default function StyledTextInput() {
       justifyContent: "center",
       backgroundColor: "#5A3ECD",
       }}>
+        <Text style={{color:'white'}}>data: {JSON.stringify(data)}</Text>
     <View style={focused ? styles.containerWithFocus : styles.container} >
       <TextInput
         style={value ? styles.textInputWithValue : styles.textInput}

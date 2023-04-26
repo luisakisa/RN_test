@@ -14,7 +14,12 @@ export default function PageFirst({navigation}) {
       />
       <Button
         title="Go to styled text input"
-        onPress={() => navigation.navigate('Third')}
+        onPress={() => {
+          navigation.navigate('Third', {
+            data: 'some data from home',
+          });
+        }}
+
       />
     </View>
   );
