@@ -8,8 +8,8 @@ import StyledTextInput from "./component-third/input";
 export default function App() {
   return (
     <View style={styles.container}>
-      {/* <SelectedGroup></SelectedGroup> */}
-      {/* <ProgressButton></ProgressButton> */}
+      <SelectedGroup></SelectedGroup>
+      <ProgressButton></ProgressButton>
       <StyledTextInput></StyledTextInput>
     </View>
   );
