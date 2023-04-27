@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { TextInput, View, StyleSheet } from 'react-native';
 
+
 export default function StyledTextInput() {
   const [value, setValue] = useState('');
   const [focused, setFocused] = useState(0);
@@ -16,6 +17,7 @@ export default function StyledTextInput() {
         onFocus={() => setFocused(1)}
         onBlur={() => setFocused(0)}
       />
+  
     </View>
   );
 }
@@ -42,6 +44,7 @@ const styles = StyleSheet.create({
   textInput: {
 
   },
+
   textInputWithValue: {
     color:'#FFFFFF'
   },
