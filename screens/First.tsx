@@ -1,7 +1,8 @@
 import { StyleSheet, Text, View } from "react-native";
-import RadioButtonsGroup from "./radio-buttons-group";
+import RadioButtonsGroup from "../components/RadioButtonsGroup/RadioButtonsGroup";
+import React from "react";
 
-export default function SelectedGroup() {
+export default function First() {
   return (
     <View style={styles.container}>
       <RadioButtonsGroup></RadioButtonsGroup>

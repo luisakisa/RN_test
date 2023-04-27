@@ -1,26 +1,17 @@
 import { RouteProp} from '@react-navigation/native';
 import React, { useState } from 'react';
 import { TextInput, View, StyleSheet,Text } from 'react-native';
-import { RootStackParamList } from '../types';
+import { RootStackParamList } from '../../types';
 
 
-type prop = {
-  route: RouteProp<RootStackParamList, 'Third'>;
-} 
 
 
-export default function StyledTextInput({route}:prop) {
-  const { data} = route.params;
+export default function StyledTextInput() {
+ 
   const [value, setValue] = useState('');
   const [focused, setFocused] = useState(0);
 
   return (
-    <View style={{ flex: 1,
-      alignItems: "center",
-      justifyContent: "center",
-      backgroundColor: "#5A3ECD",
-      }}>
-        <Text style={{color:'white'}}>data: {JSON.stringify(data)}</Text>
     <View style={focused ? styles.containerWithFocus : styles.container} >
       <TextInput
         style={value ? styles.textInputWithValue : styles.textInput}
@@ -31,7 +22,7 @@ export default function StyledTextInput({route}:prop) {
         onFocus={() => setFocused(1)}
         onBlur={() => setFocused(0)}
       />
-    </View></View>
+    </View>
   );
 }
 
