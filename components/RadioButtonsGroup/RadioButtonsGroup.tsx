@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View} from "react-native";
-import RadioButton from "./radio-button";
+import RadioButton from "../RadioButton/RadioButton";
 
 const data = [
   {

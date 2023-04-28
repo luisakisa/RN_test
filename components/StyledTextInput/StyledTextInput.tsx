@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { TextInput, View, StyleSheet } from 'react-native';
-
+import { TextInput, View } from 'react-native';
+import { styles } from './styles';
 
 export default function StyledTextInput() {
   const [value, setValue] = useState('');
@@ -22,30 +22,3 @@ export default function StyledTextInput() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#785CEB',
-    borderRadius: 24,
-    padding: 16,
-    marginBottom: 16,
-    fontSize: 17,
-    minWidth:359,
-    minHeight:170,
-  },
-  containerWithFocus:{
-    backgroundColor: '#9379FF',
-    borderRadius: 24,
-    padding: 16,
-    marginBottom: 16,
-    fontSize: 17,
-    minWidth:359,
-    minHeight:170,
-  },
-  textInput: {
-
-  },
-
-  textInputWithValue: {
-    color:'#FFFFFF'
-  },
-});

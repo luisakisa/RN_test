@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import SelectedGroup from "./component-first/component";
-import ProgressButton from "./component-second/button";
-import StyledTextInput from "./component-third/input";
+import SelectedGroup from "./screens/Second";
+import ProgressButton from "./components/ProgressButton/ProgressButton";
+import StyledTextInput from "./StyledTextInput/StyledTextInput";
 import React from "react";
 
 
