@@ -1,11 +1,14 @@
 import {StyleSheet, Text, View} from 'react-native';
 import RadioButtonsGroup from '../components/RadioButtonsGroup';
-import ProgressButton from '../components/ProgressButton';
+import React from 'react';
 
-export default function Second() {
+export default function First() {
   return (
     <View style={styles.container}>
-      <ProgressButton />
+      <RadioButtonsGroup></RadioButtonsGroup>
+      <Text style={{color: 'white'}}>
+        You can cancel your subscription anytime
+      </Text>
     </View>
   );
 }
