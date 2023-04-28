@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import SelectedGroup from "./screens/Second";
-import ProgressButton from "./components/ProgressButton/ProgressButton";
+import ProgressButton from "./components/ProgressButton";
 import StyledTextInput from "./StyledTextInput/StyledTextInput";
 import React from "react";
 
