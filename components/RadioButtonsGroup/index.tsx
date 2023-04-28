@@ -1,24 +1,24 @@
-import React, { useState } from "react";
-import { View} from "react-native";
-import RadioButton from "../RadioButton/RadioButton";
+import React, {useState} from 'react';
+import {View} from 'react-native';
+import RadioButton from '../RadioButton';
 
 const data = [
   {
     id: 1,
-    time: "Montly",
-    price: "$99 / month",
+    time: 'Montly',
+    price: '$99 / month',
     days: 3,
   },
   {
     id: 2,
-    time: "3 month",
-    price: "$199",
+    time: '3 month',
+    price: '$199',
     days: 7,
   },
   {
     id: 3,
-    time: "1 year",
-    price: "$399",
+    time: '1 year',
+    price: '$399',
     days: 7,
   },
 ];
@@ -32,7 +32,7 @@ export default function RadioButtonsGroup() {
 
   return (
     <View>
-      {data.map((item) => (
+      {data.map(item => (
         <RadioButton
           key={item.id}
           selected={selected === item.id}

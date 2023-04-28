@@ -1,28 +1,28 @@
-import { Button, StyleSheet, Text, View } from "react-native";
-import { RootStackParamList } from "../types";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import React from "react";
+import {Button, StyleSheet, Text, View} from 'react-native';
+import {RootStackParamList} from '../navigation/types';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import React from 'react';
+import {NamesScreens} from '../navigation/NamesScreens';
 
-type prop = NativeStackScreenProps<RootStackParamList, 'Home'>;
-export default function Home({navigation}:prop) {
+type Prop = NativeStackScreenProps<RootStackParamList, NamesScreens.Home>;
+export default function Home({navigation}: Prop) {
   return (
     <View style={styles.container}>
-       <Button
+      <Button
         title="Go to selected group buttons"
-        onPress={() => navigation.navigate('First')}
+        onPress={() => navigation.navigate(NamesScreens.First)}
       />
       <Button
         title="Go to progress button"
-        onPress={() => navigation.navigate('Second')}
+        onPress={() => navigation.navigate(NamesScreens.Second)}
       />
       <Button
         title="Go to styled text input"
         onPress={() => {
-          navigation.navigate('Third', {
+          navigation.navigate(NamesScreens.Third, {
             data: 'some data from home',
           });
         }}
-
       />
     </View>
   );
@@ -31,7 +31,7 @@ export default function Home({navigation}:prop) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });

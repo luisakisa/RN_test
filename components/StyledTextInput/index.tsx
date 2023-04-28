@@ -1,22 +1,16 @@
-import { RouteProp} from '@react-navigation/native';
-import React, { useState } from 'react';
-import { TextInput, View, StyleSheet,Text } from 'react-native';
-import { RootStackParamList } from '../../types';
-
-
-
+import React, {useState} from 'react';
+import {TextInput, View, StyleSheet, Text} from 'react-native';
 
 export default function StyledTextInput() {
- 
   const [value, setValue] = useState('');
   const [focused, setFocused] = useState(0);
 
   return (
-    <View style={focused ? styles.containerWithFocus : styles.container} >
+    <View style={focused ? styles.containerWithFocus : styles.container}>
       <TextInput
         style={value ? styles.textInputWithValue : styles.textInput}
         placeholder="Write your dare..."
-        placeholderTextColor='rgba(255, 255, 255, 0.7)'
+        placeholderTextColor="rgba(255, 255, 255, 0.7)"
         value={value}
         onChangeText={setValue}
         onFocus={() => setFocused(1)}
@@ -33,22 +27,20 @@ const styles = StyleSheet.create({
     padding: 16,
     marginBottom: 16,
     fontSize: 17,
-    minWidth:359,
-    minHeight:170,
+    minWidth: 359,
+    minHeight: 170,
   },
-  containerWithFocus:{
+  containerWithFocus: {
     backgroundColor: '#9379FF',
     borderRadius: 24,
     padding: 16,
     marginBottom: 16,
     fontSize: 17,
-    minWidth:359,
-    minHeight:170,
+    minWidth: 359,
+    minHeight: 170,
   },
-  textInput: {
-
-  },
+  textInput: {},
   textInputWithValue: {
-    color:'#FFFFFF'
+    color: '#FFFFFF',
   },
 });

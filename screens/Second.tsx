@@ -1,11 +1,11 @@
-import { StyleSheet, View } from "react-native";
-import React from "react";
-import ProgressButton from "../components/ProgressButton/ProgressButton";
+import {StyleSheet, View} from 'react-native';
+import React from 'react';
+import ProgressButton from '../components/ProgressButton';
 
 export default function Second() {
   return (
     <View style={styles.container}>
-      <ProgressButton></ProgressButton>
+      <ProgressButton />
     </View>
   );
 }
@@ -13,8 +13,8 @@ export default function Second() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#5A3ECD",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: '#5A3ECD',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
