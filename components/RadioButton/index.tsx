@@ -1,4 +1,4 @@
-import {Pressable, StyleSheet, Text, View} from 'react-native';
+import {Pressable, Text, View} from 'react-native';
 import React from 'react';
 import {styles} from './styles';
 
@@ -24,17 +24,27 @@ export default function RadioButton(props: {
   return (
     <Pressable onPress={handlePress}>
       <View style={[styles.container, selected && styles.selectedContainer]}>
-        <View style={styles.column_left}>
-          <Text style={{color: selected ? 'black' : 'white'}}>{time}</Text>
-          <View style={styles.box_days}>
-            <Text style={{color: 'white'}}>{days} days free trial</Text>
+        <View style={styles.columnLeft}>
+          <Text style={selected ? styles.colorBlack : styles.colorWhite}>
+            {time}
+          </Text>
+          <View style={styles.boxDays}>
+            <Text style={styles.colorWhite}>{days} days free trial</Text>
           </View>
         </View>
-        <View style={styles.column_right}>
-          <Text style={[styles.price, {color: selected ? 'black' : 'white'}]}>
+        <View style={styles.columnRight}>
+          <Text
+            style={[
+              styles.price,
+              selected ? styles.colorBlack : styles.colorWhite,
+            ]}>
             {price}
           </Text>
-          <Text style={[styles.trial, {color: selected ? 'black' : 'white'}]}>
+          <Text
+            style={[
+              styles.trial,
+              selected ? styles.colorBlack : styles.colorWhite,
+            ]}>
             Billing starts after trial
           </Text>
         </View>
