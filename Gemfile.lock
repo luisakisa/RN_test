@@ -3,19 +3,11 @@ GEM
   specs:
     CFPropertyList (3.0.6)
       rexml
-<<<<<<< HEAD
-    activesupport (6.1.7.3)
-=======
     activesupport (7.0.4.3)
->>>>>>> origin/main
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-<<<<<<< HEAD
-      zeitwerk (~> 2.3)
-=======
->>>>>>> origin/main
     addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
     algoliasearch (1.27.5)
@@ -92,10 +84,6 @@ GEM
       colored2 (~> 3.1)
       nanaimo (~> 0.3.0)
       rexml (~> 3.2.4)
-<<<<<<< HEAD
-    zeitwerk (2.6.7)
-=======
->>>>>>> origin/main
 
 PLATFORMS
   ruby
@@ -104,14 +92,7 @@ DEPENDENCIES
   cocoapods (>= 1.11.3)
 
 RUBY VERSION
-<<<<<<< HEAD
-   ruby 2.6.10p210
-
-BUNDLED WITH
-   1.17.2
-=======
    ruby 2.7.4p191
 
 BUNDLED WITH
    2.3.3
->>>>>>> origin/main
