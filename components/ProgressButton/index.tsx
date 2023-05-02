@@ -8,6 +8,7 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 import {styles} from './styles';
+
 const AnimatedText = Animated.createAnimatedComponent(TextInput);
 
 export default function ProgressButton() {
@@ -49,7 +50,10 @@ export default function ProgressButton() {
             style={styles.textLow}
           />
         </View>
-        <Image source={require('./../../assets/images/arrow/index.png')} style={styles.imgStyle} />
+        <Image
+          source={require('./../../assets/images/arrow/index.png')}
+          style={styles.imgStyle}
+        />
       </View>
     </TouchableOpacity>
   );
