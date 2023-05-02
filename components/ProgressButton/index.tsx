@@ -13,6 +13,7 @@ const AnimatedText = Animated.createAnimatedComponent(TextInput);
 
 export default function ProgressButton() {
   const progress = useSharedValue(0);
+
   const gradientAnimatedStyleWidth = useAnimatedStyle(() => {
     return {
       width: `${progress.value}%`,

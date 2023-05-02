@@ -1,10 +1,12 @@
-import {Button, StyleSheet, Text, View} from 'react-native';
-import {RootStackParamList} from '../navigation/types';
+import {Button, View} from 'react-native';
+import {RootStackParamList} from '../../navigation/types';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React from 'react';
-import {NamesScreens} from '../navigation/NamesScreens';
+import {NamesScreens} from '../../navigation/NamesScreens';
+import {styles} from './styles';
 
 type Prop = NativeStackScreenProps<RootStackParamList, NamesScreens.Home>;
+
 export default function Home({navigation}: Prop) {
   return (
     <View style={styles.container}>
@@ -27,11 +29,3 @@ export default function Home({navigation}: Prop) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
