@@ -15,8 +15,8 @@ export default function Third({route}: prop) {
 
   return (
     <View style={styles.container}>
-      <Text style={{color: 'white'}}>data: {data}</Text>
-      <StyledTextInput></StyledTextInput>
+      <Text style={styles.colorWhite}>data: {data}</Text>
+      <StyledTextInput />
     </View>
   );
 }
