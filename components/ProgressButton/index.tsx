@@ -1,91 +1,60 @@
-import React, {useState} from 'react';
-import {
-  Text,
-  StyleSheet,
-  View,
-  Animated,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
+import React from 'react';
+import {Text, View, Image, TouchableOpacity, TextInput} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
+import Animated, {
+  useAnimatedProps,
+  useAnimatedStyle,
+  useSharedValue,
+  withTiming,
+} from 'react-native-reanimated';
+import {styles} from './styles';
+
+const AnimatedText = Animated.createAnimatedComponent(TextInput);
 
 export default function ProgressButton() {
-  const [progress, setProgress] = useState<Animated.Value>(
-    new Animated.Value(0),
-  );
-
-  const animateProgress = () => {
-    Animated.timing(progress, {
-      toValue: 100,
-      duration: 4000,
-      useNativeDriver: false,
-    }).start();
-  };
-
-  const gradientWidth = progress.interpolate({
-    inputRange: [0, 100],
-    outputRange: ['0%', '100%'],
+  const progress = useSharedValue(0);
+  const gradientAnimatedStyleWidth = useAnimatedStyle(() => {
+    return {
+      width: `${progress.value}%`,
+    };
   });
 
-  const gradientColor = progress.interpolate({
-    inputRange: [0, 100],
-    outputRange: ['#DD4E58', '#FF8158'],
-  });
+  function toggleProgress(): void {
+    progress.value = withTiming(progress.value > 0 ? 0 : 100, {duration: 4000});
+  }
+
+  const valueAnimatedProps = useAnimatedProps(() => {
+    return {
+      text: `Unlocked only ${Math.round(progress.value)}% of content`,
+    } as any;
+  }, [progress.value]);
 
   return (
-    <TouchableOpacity style={styles.container} onPress={animateProgress}>
-      <View
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'flex-start',
-        }}>
-        <Text style={{color: 'white', fontSize: 20, fontWeight: '700'}}>
-          Free User
-        </Text>
-        <Text
-          style={{color: 'white', opacity: 0.64, fontSize: 15, paddingTop: 4}}>
-          Unlocked only 32% of content
-        </Text>
-      </View>
-      <Image
-        source={require('./Vector.png')}
-        style={{margin: 7, marginLeft: 90}}
-      />
+    <TouchableOpacity style={styles.container} onPress={toggleProgress}>
       <Animated.View
-        style={[
-          styles.gradientButton,
-          {
-            backgroundColor: gradientColor,
-            width: gradientWidth,
-          },
-        ]}></Animated.View>
+        style={[styles.gradientAnimatedStyle, gradientAnimatedStyleWidth]}>
+        <LinearGradient
+          colors={['#DD4E58', '#FF8158']}
+          style={styles.gradient}
+          start={{x: 0, y: 0.5}}
+          end={{x: 1, y: 0.5}}
+        />
+      </Animated.View>
+      <View style={styles.content}>
+        <View style={styles.textContainer}>
+          <Text style={styles.textUp}>Free User</Text>
+          <AnimatedText
+            value={'Unlocked only 0% of content'}
+            editable={false}
+            animatedProps={valueAnimatedProps}
+            style={styles.textLow}
+          />
+        </View>
+        <Image
+          source={require('./../../assets/images/arrow/index.png')}
+          style={styles.imgStyle}
+        />
+      </View>
     </TouchableOpacity>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    color: 'white',
-    backgroundColor: '#432AA9',
-    marginBottom: 8,
-    marginHorizontal: 8,
-    display: 'flex',
-    justifyContent: 'center',
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderRadius: 34,
-    padding: 16,
-    borderWidth: 8,
-    borderColor: '#785CEB',
-    position: 'relative',
-  },
-  gradientButton: {
-    borderRadius: 25,
-    position: 'absolute',
-    right: 0,
-    left: 0,
-    top: 0,
-    bottom: 0,
-    zIndex: -1,
-  },
-});
