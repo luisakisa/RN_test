@@ -3,32 +3,26 @@ import React from 'react';
 import {styles} from './styles';
 import {SvgProps} from 'react-native-svg';
 
-interface Props {
-  data: {
-    title: string;
-    Icon: React.FC<SvgProps>;
-  };
+export default function VibrationsPattern(props: {
+  title: string;
+  Icon: React.FC<SvgProps>;
   id: number;
   selected: boolean;
   onSelect: (id: number) => void;
-}
+}) {
+  const {title, Icon, id, selected, onSelect} = props;
 
-export default function VibrationsPattern(props: Props) {
   const handlePress = () => {
-    props.onSelect(props.id);
+    onSelect(id);
   };
 
   return (
     <Pressable onPress={handlePress}>
       <View
-        style={[
-          styles.container,
-          props.selected && styles.selectedColorBackground,
-        ]}>
-        <props.data.Icon fill={props.selected ? 'rgb(55, 50, 137)' : 'white'} />
-        <Text
-          style={[styles.whiteColor, props.selected && styles.selectedColor]}>
-          {props.data.title}
+        style={[styles.container, selected && styles.selectedColorBackground]}>
+        <Icon fill={selected ? 'rgb(55, 50, 137)' : 'white'} />
+        <Text style={[styles.whiteColor, selected && styles.selectedColor]}>
+          {title}
         </Text>
       </View>
     </Pressable>
