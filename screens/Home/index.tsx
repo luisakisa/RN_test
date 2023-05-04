@@ -26,6 +26,10 @@ export default function Home({navigation}: Prop) {
           });
         }}
       />
+      <Button
+        title="Go to vibrattions patterns"
+        onPress={() => navigation.navigate(NamesScreens.VibrationsPatterns)}
+      />
     </View>
   );
 }

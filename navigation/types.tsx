@@ -7,4 +7,5 @@ export type RootStackParamList = {
   [NamesScreens.Third]: {
     data: string;
   };
+  [NamesScreens.VibrationsPatterns]: undefined;
 };
