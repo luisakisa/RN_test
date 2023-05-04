@@ -8,7 +8,7 @@ interface Props {
     name: string;
     svg: React.FC<SvgProps>;
   };
-  key: number;
+  id: number;
   selected: boolean;
   onSelect: (id: number) => void;
 }
@@ -17,7 +17,7 @@ export default function VibrationsPattern(props: Props) {
   const ComponentSVG = props.data.svg;
 
   const handlePress = () => {
-    props.onSelect(props.key);
+    props.onSelect(props.id);
   };
 
   return (

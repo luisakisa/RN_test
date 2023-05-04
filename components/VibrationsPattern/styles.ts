@@ -19,7 +19,6 @@ export const styles = StyleSheet.create({
   },
   selectedColor: {
     color: 'rgba(55, 50, 137, 1)',
-    fill: 'rgba(255, 170, 170, 1)',
   },
   selectedColorBackground: {
     backgroundColor: 'rgba(255, 170, 170, 1)',

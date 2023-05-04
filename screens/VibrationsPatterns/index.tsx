@@ -54,7 +54,8 @@ export default function VibrationsPatterns() {
           {data.map((item, index) => (
             <VibrationsPattern
               data={item}
-              key={index}
+              id={index}
+              key={`VibrationsPattern-${item.name}-${index}`}
               selected={selected === index}
               onSelect={() => handleSelect(index)}
             />
