@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {styles} from './styles';
 import VibrationsPattern from '../../components/VibrationsPattern';
 import LinearGradient from 'react-native-linear-gradient';
-import {View, Text} from 'react-native';
+import {View, Text, ScrollView} from 'react-native';
 import Arrow from './../../assets/svg/arrow/index.svg';
 import Rain from './../../assets/svg/rain/index.svg';
 import Volcano from './../../assets/svg/volcano/index.svg';
@@ -25,6 +25,12 @@ const data = [
   {name: 'Waterfall', svg: Waterfall},
   {name: 'Tsunami', svg: Tsunami},
   {name: 'Volcano', svg: Volcano},
+  {name: 'Impulse', svg: Impulse},
+  {name: 'Breeze', svg: Breeze},
+  {name: 'Heartbeat', svg: Heartbeat},
+  {name: 'Tornado', svg: Tornado},
+  {name: 'Rain', svg: Rain},
+  {name: 'Universe', svg: Universe},
 ];
 
 export default function VibrationsPatterns() {
@@ -36,23 +42,25 @@ export default function VibrationsPatterns() {
   };
 
   return (
-    <View style={styles.container}>
+    <LinearGradient
+      colors={['#29246A', '#0F1A3C']}
+      style={styles.gradintBackground}>
       <View style={[styles.header, {paddingTop: safeAreaInsets.top + 16}]}>
         <Arrow style={[styles.arrow, {top: safeAreaInsets.top + 20}]}></Arrow>
         <Text style={styles.whiteColor}>Vibrations patterns</Text>
       </View>
-      <LinearGradient
-        colors={['#29246A', '#0F1A3C']}
-        style={styles.gradintBackground}>
-        {data.map((item, index) => (
-          <VibrationsPattern
-            data={item}
-            key={index}
-            selected={selected === index}
-            onSelect={() => handleSelect(index)}
-          />
-        ))}
-      </LinearGradient>
-    </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.container}>
+          {data.map((item, index) => (
+            <VibrationsPattern
+              data={item}
+              key={index}
+              selected={selected === index}
+              onSelect={() => handleSelect(index)}
+            />
+          ))}
+        </View>
+      </ScrollView>
+    </LinearGradient>
   );
 }
