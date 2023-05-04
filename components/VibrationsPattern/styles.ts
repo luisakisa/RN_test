@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 8,
     borderRadius: 16,
     height: 140,
-    width: 109,
+    width: (Dimensions.get('window').width - 2 * (8 + 16) - 1) / 3,
   },
   whiteColor: {
     color: 'white',

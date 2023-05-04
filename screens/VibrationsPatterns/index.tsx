@@ -13,6 +13,7 @@ import Tornado from './../../assets/svg/tornado/index.svg';
 import Breeze from './../../assets/svg/breeze/index.svg';
 import Impulse from './../../assets/svg/impulse/index.svg';
 import Heartbeat from './../../assets/svg/heartbeat/index.svg';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 const data = [
   {name: 'Impulse', svg: Impulse},
@@ -28,6 +29,7 @@ const data = [
 
 export default function VibrationsPatterns() {
   const [selected, setSelected] = useState(1);
+  const safeAreaInsets = useSafeAreaInsets();
 
   const handleSelect = (id: number) => {
     setSelected(id);
@@ -35,8 +37,8 @@ export default function VibrationsPatterns() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Arrow style={styles.arrow}></Arrow>
+      <View style={[styles.header, {paddingTop: safeAreaInsets.top + 16}]}>
+        <Arrow style={[styles.arrow, {top: safeAreaInsets.top + 20}]}></Arrow>
         <Text style={styles.whiteColor}>Vibrations patterns</Text>
       </View>
       <LinearGradient

@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
   gradintBackground: {
-    flex: 3,
+    flex: 1,
     paddingVertical: 48,
     paddingHorizontal: 16,
     gap: 8,
@@ -12,8 +12,8 @@ export const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     backgroundColor: '#29246A',
-    paddingTop: 60,
     alignItems: 'center',
+    justifyContent: 'center',
   },
   container: {
     flex: 1,
@@ -23,9 +23,9 @@ export const styles = StyleSheet.create({
     color: 'white',
     fontSize: 20,
     fontWeight: '600',
-    marginHorizontal: 56,
   },
   arrow: {
-    marginLeft: 20,
+    position: 'absolute',
+    left: 20,
   },
 });
