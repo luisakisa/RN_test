@@ -5,6 +5,8 @@ import LinearGradient from 'react-native-linear-gradient';
 import {View, Text, ScrollView} from 'react-native';
 import Icons from './../../assets/svg/index';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {Provider} from 'react-redux';
+import Store from './../../redux/store';
 
 const data = [
   {title: 'Impulse', Icon: Icons.Impulse},
@@ -33,26 +35,28 @@ export default function VibrationsPatterns() {
   };
 
   return (
-    <LinearGradient
-      colors={['#29246A', '#0F1A3C']}
-      style={styles.gradintBackground}>
-      <View style={[styles.header, {paddingTop: safeAreaInsets.top + 16}]}>
-        <Icons.Arrow style={[styles.arrow, {top: safeAreaInsets.top + 20}]} />
-        <Text style={styles.whiteColor}>Vibrations patterns</Text>
-      </View>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.container}>
-          {data.map((item, index) => (
-            <VibrationsPattern
-              data={item}
-              id={index}
-              key={`VibrationsPattern-${item.title}-${index}`}
-              selected={selected === index}
-              onSelect={() => handleSelect(index)}
-            />
-          ))}
+    <Provider store={Store}>
+      <LinearGradient
+        colors={['#29246A', '#0F1A3C']}
+        style={styles.gradintBackground}>
+        <View style={[styles.header, {paddingTop: safeAreaInsets.top + 16}]}>
+          <Icons.Arrow style={[styles.arrow, {top: safeAreaInsets.top + 20}]} />
+          <Text style={styles.whiteColor}>Vibrations patterns</Text>
         </View>
-      </ScrollView>
-    </LinearGradient>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={styles.container}>
+            {data.map((item, index) => (
+              <VibrationsPattern
+                data={item}
+                id={index}
+                key={`VibrationsPattern-${item.title}-${index}`}
+                selected={selected === index}
+                onSelect={() => handleSelect(index)}
+              />
+            ))}
+          </View>
+        </ScrollView>
+      </LinearGradient>
+    </Provider>
   );
 }
