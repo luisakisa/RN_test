@@ -1,15 +1,22 @@
 import {Dimensions, StyleSheet} from 'react-native';
 
+const paddingHorizontalContainer = 8;
+const paddingVerticalContainer = 16;
+
 export const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'rgba(55, 50, 137, 1)',
+    backgroundColor: 'rgb(55, 50, 137)',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 16,
-    paddingHorizontal: 8,
+    paddingVertical: paddingVerticalContainer,
+    paddingHorizontal: paddingHorizontalContainer,
     borderRadius: 16,
     height: 140,
-    width: (Dimensions.get('window').width - 2 * (8 + 16) - 1) / 3,
+    width:
+      (Dimensions.get('window').width -
+        2 * (paddingHorizontalContainer + paddingVerticalContainer) -
+        1) /
+      3,
   },
   whiteColor: {
     color: 'white',
@@ -18,9 +25,9 @@ export const styles = StyleSheet.create({
     marginTop: 22,
   },
   selectedColor: {
-    color: 'rgba(55, 50, 137, 1)',
+    color: 'rgb(55, 50, 137)',
   },
   selectedColorBackground: {
-    backgroundColor: 'rgba(255, 170, 170, 1)',
+    backgroundColor: 'rgb(255, 170, 170)',
   },
 });

@@ -3,4 +3,5 @@ export enum NamesScreens {
   First = 'First',
   Second = 'Second',
   Third = 'Third',
+  VibrationsPatterns = 'VibrationsPatterns',
 }
