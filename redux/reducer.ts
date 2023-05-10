@@ -1,18 +1,26 @@
-import {PayloadAction, createReducer} from '@reduxjs/toolkit';
+import {PayloadAction, createSlice} from '@reduxjs/toolkit';
 
-export const ACTIONS_TYPES = {
-  CURRENT_PATTERN: 'CURRENT_PATTERN',
+export interface PatternsState {
+  value: number;
+}
+
+const initialState: PatternsState = {
+  value: 0,
 };
 
-const initialState: number = 0;
-
-const reducer = createReducer(initialState, builder => {
-  builder.addCase(
-    ACTIONS_TYPES.CURRENT_PATTERN,
-    (state, action: PayloadAction<number>) => {
-      state = action.payload;
+export const patternsSlice = createSlice({
+  name: 'patterns',
+  initialState,
+  reducers: {
+    changeActivePattern: (state, action: PayloadAction<number>) => {
+      state.value = action.payload;
     },
-  );
+  },
 });
 
-export default reducer;
+// Action creators are generated for each case reducer function
+export const {changeActivePattern} = patternsSlice.actions;
+
+export default patternsSlice.reducer;
+
+export type PatternReducer = ReturnType<typeof patternsSlice.reducer>;
