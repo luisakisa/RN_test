@@ -2,14 +2,18 @@ import React from 'react';
 import {styles} from './styles';
 import VibrationsPattern from '../../components/VibrationsPattern';
 import LinearGradient from 'react-native-linear-gradient';
-import {View, Text, ScrollView, Pressable} from 'react-native';
+import {View, Text, ScrollView, Pressable, Alert} from 'react-native';
 import Icons from './../../assets/svg/index';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {changeActivePattern} from './../../redux/reducer';
-import {useAppDispatch, useAppSelector} from '../../redux/hooks';
+import {
+  changeActivePattern,
+  selectPattern,
+  incrementCounterPattern,
+} from './../../redux/reducer';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../navigation/types';
 import {NamesScreens} from '../../navigation/NamesScreens';
+import {useDispatch, useSelector} from 'react-redux';
 
 const data = [
   {id: 1, title: 'Impulse', Icon: Icons.Impulse},
@@ -36,11 +40,12 @@ type Prop = NativeStackScreenProps<
 
 export default function VibrationsPatterns({navigation}: Prop) {
   const safeAreaInsets = useSafeAreaInsets();
-  const selected = useAppSelector(state => state.value);
-  const dispatch = useAppDispatch();
+  const selected = useSelector(selectPattern);
+  const dispatch = useDispatch();
 
   const handleSelect = (id: number) => {
     dispatch(changeActivePattern(id));
+    dispatch(incrementCounterPattern());
   };
 
   const handlePress = () => {

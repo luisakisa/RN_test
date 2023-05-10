@@ -1,5 +1,5 @@
 import {configureStore} from '@reduxjs/toolkit';
-import patternsReducer, {PatternReducer} from './reducer';
+import patternReducer, {PatternReducer} from './reducer';
 import {persistStore, persistReducer} from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
@@ -7,9 +7,10 @@ const persistConfig = {
   key: 'root',
   storage,
 };
+
 const persistedReducer = persistReducer<PatternReducer>(
   persistConfig,
-  patternsReducer,
+  patternReducer,
 );
 
 export const store = configureStore({
