@@ -5,8 +5,8 @@ import LinearGradient from 'react-native-linear-gradient';
 import {View, Text, ScrollView, Pressable} from 'react-native';
 import Icons from './../../assets/svg/index';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {changeActivePattern} from '../../redux/patternSlice';
-import {incrementCounterPattern} from '../../redux/counterSlice';
+import {changeActivePattern} from '../../redux/slices/patternSlice';
+import {incrementCounterPattern} from '../../redux/slices/counterSlice';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../navigation/types';
 import {NamesScreens} from '../../navigation/NamesScreens';
@@ -38,7 +38,7 @@ type Prop = NativeStackScreenProps<
 
 export default function VibrationsPatterns({navigation}: Prop) {
   const safeAreaInsets = useSafeAreaInsets();
-  const selected = useSelector((state: RootState) => state.pattern.id);
+  const selectedPatternID = useSelector((state: RootState) => state.pattern.id);
   const dispatch = useDispatch();
 
   const handleSelect = (id: number) => {
@@ -70,7 +70,7 @@ export default function VibrationsPatterns({navigation}: Prop) {
               title={item.title}
               Icon={item.Icon}
               key={`VibrationsPattern-${item.title}-${index}`}
-              selected={selected === item.id}
+              selected={selectedPatternID === item.id}
               onSelect={() => handleSelect(item.id)}
             />
           ))}

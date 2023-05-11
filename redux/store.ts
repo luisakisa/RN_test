@@ -1,6 +1,6 @@
 import {configureStore} from '@reduxjs/toolkit';
-import patternReducer from './patternSlice';
-import counterReducer from './counterSlice';
+import patternReducer from './slices/patternSlice';
+import counterReducer from './slices/counterSlice';
 import {
   persistStore,
   persistReducer,
