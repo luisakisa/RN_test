@@ -1,6 +1,7 @@
 import {Pressable, Text, View} from 'react-native';
 import React from 'react';
 import {styles} from './styles';
+import {useTranslation} from 'react-i18next';
 
 interface Data {
   id: number;
@@ -16,6 +17,7 @@ export default function RadioButton(props: {
 }) {
   const {id, time, price, days} = props.data;
   const {selected, onSelect} = props;
+  const {t} = useTranslation();
 
   const handlePress = () => {
     onSelect(id);
@@ -29,7 +31,9 @@ export default function RadioButton(props: {
             {time}
           </Text>
           <View style={styles.boxDays}>
-            <Text style={styles.colorWhite}>{days} days free trial</Text>
+            <Text style={styles.colorWhite}>
+              {days} {t('first.trial')}
+            </Text>
           </View>
         </View>
         <View style={styles.columnRight}>
@@ -45,7 +49,7 @@ export default function RadioButton(props: {
               styles.trial,
               selected ? styles.colorBlack : styles.colorWhite,
             ]}>
-            Billing starts after trial
+            {t('first.billing')}
           </Text>
         </View>
       </View>
