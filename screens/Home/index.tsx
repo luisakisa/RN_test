@@ -4,6 +4,7 @@ import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React from 'react';
 import {NamesScreens} from '../../navigation/NamesScreens';
 import {styles} from './styles';
+import PushNotification from 'react-native-push-notification';
 
 type Prop = NativeStackScreenProps<RootStackParamList, NamesScreens.Home>;
 
