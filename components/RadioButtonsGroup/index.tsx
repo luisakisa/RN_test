@@ -1,27 +1,30 @@
 import React, {useState} from 'react';
 import {View} from 'react-native';
 import RadioButton from '../RadioButton';
+import i18n from '../../i18n';
 
-const data = [
-  {
-    id: 1,
-    time: 'Montly',
-    price: '$99 / month',
-    days: 3,
-  },
-  {
-    id: 2,
-    time: '3 month',
-    price: '$199',
-    days: 7,
-  },
-  {
-    id: 3,
-    time: '1 year',
-    price: '$399',
-    days: 7,
-  },
-];
+const data = () => {
+  return [
+    {
+      id: 1,
+      time: i18n.t('first.monthly'),
+      price: `$99 / ${i18n.t('first.month')}`,
+      days: 3,
+    },
+    {
+      id: 2,
+      time: `3 ${i18n.t('first.of-mounth')}`,
+      price: '$199',
+      days: 7,
+    },
+    {
+      id: 3,
+      time: `1 ${i18n.t('first.year')}`,
+      price: '$399',
+      days: 7,
+    },
+  ];
+};
 
 export default function RadioButtonsGroup() {
   const [selected, setSelected] = useState(1);
@@ -32,7 +35,7 @@ export default function RadioButtonsGroup() {
 
   return (
     <View>
-      {data.map(item => (
+      {data().map(item => (
         <RadioButton
           key={item.id}
           selected={selected === item.id}
