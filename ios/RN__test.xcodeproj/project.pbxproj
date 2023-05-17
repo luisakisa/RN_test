@@ -43,6 +43,7 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-RN__test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RN__test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = RN__test/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-RN__test-RN__testTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RN__test-RN__testTests.release.xcconfig"; path = "Target Support Files/Pods-RN__test-RN__testTests/Pods-RN__test-RN__testTests.release.xcconfig"; sourceTree = "<group>"; };
+		CE64BC9F2A1393A5006DD6EE /* RN__test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = RN__test.entitlements; path = RN__test/RN__test.entitlements; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -86,6 +87,7 @@
 		13B07FAE1A68108700A75B9A /* RN__test */ = {
 			isa = PBXGroup;
 			children = (
+				CE64BC9F2A1393A5006DD6EE /* RN__test.entitlements */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -485,6 +487,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = RN__test/RN__test.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = RN__test/Info.plist;
@@ -512,6 +515,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = RN__test/RN__test.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = RN__test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

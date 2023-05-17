@@ -1,14 +1,19 @@
-import {Button, View} from 'react-native';
+import {Button, Platform, View} from 'react-native';
 import {RootStackParamList} from '../../navigation/types';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import React from 'react';
+import React, {useEffect} from 'react';
 import {NamesScreens} from '../../navigation/NamesScreens';
 import {styles} from './styles';
-import PushNotification from 'react-native-push-notification';
+// import {request, PERMISSIONS} from 'react-native-permissions';
 
 type Prop = NativeStackScreenProps<RootStackParamList, NamesScreens.Home>;
 
 export default function Home({navigation}: Prop) {
+  // useEffect(() => {
+  //   if(Platform.OS==="android"){
+  //     request(PERMISSIONS.ANDROID.POST_NOTIFICATIONS);
+  //   }
+  // },[]);
   return (
     <View style={styles.container}>
       <Button
