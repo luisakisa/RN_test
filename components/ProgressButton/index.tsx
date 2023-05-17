@@ -8,11 +8,13 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 import {styles} from './styles';
+import {useTranslation} from 'react-i18next';
 
 const AnimatedText = Animated.createAnimatedComponent(TextInput);
 
 export default function ProgressButton() {
   const progress = useSharedValue(0);
+  const {t, i18n} = useTranslation();
 
   const gradientAnimatedStyleWidth = useAnimatedStyle(() => {
     return {
@@ -24,9 +26,13 @@ export default function ProgressButton() {
     progress.value = withTiming(progress.value > 0 ? 0 : 100, {duration: 4000});
   }
 
+  const text1 = i18n.t('second.text-percent1');
+  const text2 = i18n.t('second.text-percent2');
+  const textPercent = i18n.t('second.text-percent');
+
   const valueAnimatedProps = useAnimatedProps(() => {
     return {
-      text: `Unlocked only ${Math.round(progress.value)}% of content`,
+      text: `${text1} ${Math.round(progress.value) + text2}`,
     } as any;
   }, [progress.value]);
 
@@ -43,9 +49,9 @@ export default function ProgressButton() {
       </Animated.View>
       <View style={styles.content}>
         <View style={styles.textContainer}>
-          <Text style={styles.textUp}>Free User</Text>
+          <Text style={styles.textUp}>{t('second.free-user')}</Text>
           <AnimatedText
-            value={'Unlocked only 0% of content'}
+            value={textPercent}
             editable={false}
             animatedProps={valueAnimatedProps}
             style={styles.textLow}

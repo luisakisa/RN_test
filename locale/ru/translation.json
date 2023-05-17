@@ -1,0 +1,47 @@
+{
+  "home": {
+    "button1": "Перейти к группе кнопок",
+    "button2": "Перейти к кнопке прогресса",
+    "button3": "Перейти к стилизованному инпуту",
+    "button4": "Перейти к паттернам вибрации"
+  },
+  "first": {
+    "text-subscribe": "Вы можете отменить подписку в любое время",
+    "trial": "дней бесплатно",
+    "billing": "После пробного периода",
+    "month": "месяц",
+    "year": "год",
+    "of-mounth": "месяца",
+    "monthly": "Ежемесячно"
+  },
+  "second": {
+    "text-percent": "Разблокировано 0% контента",
+    "free-user": "Бесплатное пользование",
+    "text-percent1": "Разблокировано",
+    "text-percent2": "% контента"
+  },
+  "third": {
+    "placeholder": "Напишите свой отзыв...",
+    "button2": "Go to progress button",
+    "button3": "Go to styled text input",
+    "button4": "Go to vibrattions patterns"
+  },
+  "vibrations": {
+    "title": "Паттерны вибрации",
+    "pattern1": "Импульс",
+    "pattern2": "Ветер",
+    "pattern3": "Сердцебиение",
+    "pattern4": "Торнадо",
+    "pattern5": "Дождь",
+    "pattern6": "Вселенная",
+    "pattern7": "Водопад",
+    "pattern8": "Цунами",
+    "pattern9": "Вулкан",
+    "pattern10": "Импульс",
+    "pattern11": "Ветер",
+    "pattern12": "Сердцебиение",
+    "pattern13": "Торнадо",
+    "pattern14": "Дождь",
+    "pattern15": "Вселенная"
+  }
+}

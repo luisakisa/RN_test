@@ -1,0 +1,44 @@
+{
+  "home": {
+    "button1": "Go to selected group buttons",
+    "button2": "Go to progress button",
+    "button3": "Go to styled text input",
+    "button4": "Go to vibrattions patterns"
+  },
+  "first": {
+    "text-subscribe": "You can cancel your subscription anytime",
+    "trial": "days free trial",
+    "billing": "Billing starts after trial",
+    "month": "month",
+    "year": "year",
+    "of-mounth": "month",
+    "monthly": "Monthly"
+  },
+  "second": {
+    "text-percent": "Unlocked only 0% of content",
+    "free-user": "Free User",
+    "text-percent1": "Unlocked only",
+    "text-percent2": "% of content"
+  },
+  "third": {
+    "placeholder": "Write your dare..."
+  },
+  "vibrations": {
+    "title": "Vibrations patterns",
+    "pattern1": "Impulse",
+    "pattern2": "Breeze",
+    "pattern3": "Heartbeat",
+    "pattern4": "Tornado",
+    "pattern5": "Rain",
+    "pattern6": "Universe",
+    "pattern7": "Waterfall",
+    "pattern8": "Tsunami",
+    "pattern9": "Volcano",
+    "pattern10": "Impulse",
+    "pattern11": "Breeze",
+    "pattern12": "Heartbeat",
+    "pattern13": "Tornado",
+    "pattern14": "Rain",
+    "pattern15": "Universe"
+  }
+}

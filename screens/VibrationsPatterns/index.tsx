@@ -12,6 +12,7 @@ import {RootStackParamList} from '../../navigation/types';
 import {NamesScreens} from '../../navigation/NamesScreens';
 import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from '../../redux/store';
+import {useTranslation} from 'react-i18next';
 
 const data = [
   {id: 1, title: 'Impulse', Icon: Icons.Impulse},
@@ -40,6 +41,7 @@ export default function VibrationsPatterns({navigation}: Prop) {
   const safeAreaInsets = useSafeAreaInsets();
   const selectedPatternID = useSelector((state: RootState) => state.pattern.id);
   const dispatch = useDispatch();
+  const {t} = useTranslation();
 
   const handleSelect = (id: number) => {
     dispatch(changeActivePattern(id));
@@ -60,14 +62,14 @@ export default function VibrationsPatterns({navigation}: Prop) {
           style={[styles.arrow, {top: safeAreaInsets.top + 20}]}>
           <Icons.Arrow />
         </Pressable>
-        <Text style={styles.whiteColor}>Vibrations patterns</Text>
+        <Text style={styles.whiteColor}>{t('vibrations.title')}</Text>
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.container}>
           {data.map((item, index) => (
             <VibrationsPattern
               id={item.id}
-              title={item.title}
+              title={t(`vibrations.pattern${item.id}`)}
               Icon={item.Icon}
               key={`VibrationsPattern-${item.title}-${index}`}
               selected={selectedPatternID === item.id}
