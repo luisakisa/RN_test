@@ -4,11 +4,12 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {Provider} from 'react-redux';
 import {persistor, store} from './redux/store';
 import {PersistGate} from 'redux-persist/integration/react';
-import {notification} from './notification';
-import './i18n';
+import {configureNotification} from './modules/notifications';
+import './modules/i18n';
 
 export default function App() {
-  notification();
+  configureNotification();
+
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>

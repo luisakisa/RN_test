@@ -1,15 +1,27 @@
-import {Button, View} from 'react-native';
+import {Button, View, Platform} from 'react-native';
 import {RootStackParamList} from '../../navigation/types';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React, {useEffect} from 'react';
 import {NamesScreens} from '../../navigation/NamesScreens';
 import {styles} from './styles';
 import {useTranslation} from 'react-i18next';
+import {request, PERMISSIONS} from 'react-native-permissions';
+import {createNotification} from '../../modules/notifications';
 
 type Prop = NativeStackScreenProps<RootStackParamList, NamesScreens.Home>;
 
 export default function Home({navigation}: Prop) {
   const {t} = useTranslation();
+
+  useEffect(() => {
+    if (Platform.OS === 'android') {
+      request(PERMISSIONS.ANDROID.POST_NOTIFICATIONS);
+    } else {
+      request(PERMISSIONS.IOS.APP_TRACKING_TRANSPARENCY);
+    }
+  }, []);
+
+  createNotification('My Notification', new Date(Date.now() + 30 * 1000), 1, 1);
 
   return (
     <View style={styles.container}>

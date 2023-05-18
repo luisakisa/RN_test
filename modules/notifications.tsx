@@ -2,7 +2,7 @@ import PushNotification, {Importance} from 'react-native-push-notification';
 import PushNotificationIOS from '@react-native-community/push-notification-ios';
 import {Platform} from 'react-native';
 
-export const notification = () => {
+export function configureNotification() {
   PushNotification.configure({
     // (optional) Called when Token is generated (iOS and Android)
     onRegister: function (token: string) {
@@ -56,16 +56,18 @@ export const notification = () => {
     },
     (created: boolean) => console.log(`createChannel returned '${created}'`), // (optional) callback returns whether the channel was created, false means it already existed.
   );
-
+}
+export function createNotification(
+  message: string,
+  date: Date,
+  repeatTime: number,
+  id: number,
+) {
   PushNotification.localNotificationSchedule({
-    message: 'My Notification Message', // (required)
-    date: new Date(Date.now() + 30 * 1000), // in 30 secs
-    repeatTime: 1,
+    message: message,
+    date: date,
+    repeatTime: repeatTime,
     channelId: 'rn1',
-    id: 1,
+    id: id,
   });
-
-  PushNotification.getChannels(function (channel_ids: string) {
-    console.log(channel_ids); // ['channel_id_1']
-  });
-};
+}
